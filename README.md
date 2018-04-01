@@ -8,4 +8,4 @@
 ובכתובת של האתר תדביקו את שורת הקוד ושמרו.
 זוהי שורת הקוד שמפעילה את הסורק 
 
-javascript:var PTIndex=function(){var e="https://rawgit.com/miscweb/PriceHistory/1.0/uiext.js";return{LoadLibrary:function(e,t){var a=document.createElement("script");a.type="text/javascript",a.src=e,a.readyState?a.onreadystatechange=function(){"loaded"!=a.readyState&&"complete"!=a.readyState||(a.onreadystatechange=null,t&&t())}:a.onload=function(){t&&t()},document.getElementsByTagName("head")[0].appendChild(a)},Init:function(){"undefined"==typeof UIExtension&&PTIndex.LoadLibrary(e)}}}();PTIndex.Init();
+javascript:var APP_VERSION="1.1",PTIndex=function(){var e={scriptUrl:"https://rawgit.com/miscweb/PriceHistory/"+APP_VERSION+"/uiext.js"};return{LoadLibrary:function(e,t){var n=document.createElement("script");n.type="text/javascript",n.src=e,n.readyState?n.onreadystatechange=function(){"loaded"!=n.readyState&&"complete"!=n.readyState||(n.onreadystatechange=null,t&&t())}:n.onload=function(){t&&t()},document.getElementsByTagName("head")[0].appendChild(n)},Init:function(){"undefined"==typeof UIExtension&&PTIndex.LoadLibrary(e.scriptUrl)}}}();PTIndex.Init();
