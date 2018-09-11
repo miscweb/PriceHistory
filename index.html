@@ -13,7 +13,7 @@
 <h1>הדביקו את שורת הקוד הנל</h1>
 <div id="exe"></div>
 <div id="fb-root" style="margin-top:50px"></div>
-<div class="fb-comments" data-numposts="10" data-href=''> </div>
+<div id="fb-commentsWrapper" class="fb-comments" data-numposts="10" > </div>
 <script type="application/javascript">
 function LoadLibrary(liburl,cb){
 			var jscript = document.createElement("script");
@@ -38,7 +38,7 @@ var APP_VERSION='1.5',email='strictmodeoff@gmail.com',tracking='UA-116724973-1',
 document.getElementById('exe').innerText=exe;
 document.getElementById('cu').href='mailto:'+email;
 document.getElementById('cu').innerText=email;
-//document.getElementById('fb-commentsWrapper').dataset.href=document.location.href;
+document.getElementById('fb-commentsWrapper').dataset.href=document.location.href;
 Array.from(document.getElementsByClassName('tutoriali')).forEach(function(e)
 {
 	e.src='https://rawgit.com/miscweb/PriceHistory/'+APP_VERSION+'/images/'+e.dataset.id+'.png';
