@@ -11,8 +11,9 @@
 <p>Contact us: <a id="cu" href="" target="_top"></a><p/>
 </div>
 <h1>הדביקו את שורת הקוד הנל</h1>
-<div id="exe"/>
-
+<div id="exe"></div>
+<div id="fb-root"></div>
+<div id="fb-commentsWrapper" class="fb-comments" data-numposts="5"> </div>
 <script type="application/javascript">
 function LoadLibrary(liburl,cb){
 			var jscript = document.createElement("script");
@@ -37,6 +38,7 @@ var APP_VERSION='1.5',email='strictmodeoff@gmail.com',tracking='UA-116724973-1',
 document.getElementById('exe').innerText=exe;
 document.getElementById('cu').href='mailto:'+email;
 document.getElementById('cu').innerText=email;
+//document.getElementById('fb-commentsWrapper').dataset.href=document.location.href;
 Array.from(document.getElementsByClassName('tutoriali')).forEach(function(e)
 {
 	e.src='https://rawgit.com/miscweb/PriceHistory/'+APP_VERSION+'/images/'+e.dataset.id+'.png';
@@ -46,5 +48,12 @@ LoadLibrary('https://rawgit.com/miscweb/PriceHistory/'+APP_VERSION+'/analytics.j
 	ga('send', 'pageview');
 
 });
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';  
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 </script>
 
