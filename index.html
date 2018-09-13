@@ -9,6 +9,7 @@
 <meta property='og:image:height' content='250' />
 <meta property='og:url' content='https://rawgit.com/miscweb/pricehistory/master/index.html' />
 <meta property='og:image' content='http://raw.githubusercontent.com/miscweb/pricehistory/master/images/t3.png' />
+<script type="application/javascript" src="clipboard.min.js"></script>
 </head>
 <body>
 <div dir="rtl" align="right">
@@ -23,7 +24,15 @@
 <img class="tutoriali" data-id="t3" style="height:250px;width:250px"/> <p/>
 <p>Contact us: <a id="cu" href="" target="_top"></a><p/>
 <h1>הדביקו את שורת הקוד הנל</h1>
-<div> <input id="exeb" type="button" value="העתק"><input id="exe" type="text" size=70 readonly dir="ltr"style="background: lightgray"></div>
+<div> 
+
+<span class="input-group-button">
+<button class="btn" type="button" data-clipboard-demo="" data-clipboard-target="#exe" style="min-height:33px;position:relative;display:inline-block;padding:6px 12px;vertical-align:middle;">
+<img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" style="margin-top:-3px;position:relative;top:3px"alt="Copy to clipboard">
+</button>
+</span>
+<input id="exe" type="text" size=70 readonly dir="ltr"style="background: lightgray;min-height:33px;padding:7px;vertical-align:middle;">
+</div>
 <div align="right" style="margin-top:50px">
 	<div class="fb-like" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 	<div id="fb-root" ></div>
@@ -32,6 +41,7 @@
 
 </div>
 <script type="application/javascript">
+new ClipboardJS('[data-clipboard-demo]').on('success',function(e){e.clearSelection();});
 function LoadLibrary(liburl,cb){
 			var jscript = document.createElement("script");
 			jscript.type = 'text/javascript';
@@ -57,11 +67,6 @@ document.getElementById('cu').href='mailto:'+email;
 document.getElementById('cu').innerText=email;
 document.getElementsByClassName('fb-comments')[0].dataset.href=document.location.href.toLocaleLowerCase();
 document.getElementsByClassName('fb-like')[0].dataset.href=document.location.href.toLocaleLowerCase();
-document.getElementById('exeb').onclick=function()
-{
-  document.getElementById("exe").select();  
-  document.execCommand("copy");  
-};
 Array.from(document.getElementsByClassName('tutoriali')).forEach(function(e)
 {
 	e.src='https://rawgit.com/miscweb/pricehistory/'+APP_VERSION+'/images/'+e.dataset.id+'.png';
@@ -78,6 +83,7 @@ LoadLibrary('https://rawgit.com/miscweb/pricehistory/'+APP_VERSION+'/analytics.j
   js.src = 'https://connect.facebook.net/he_IL/sdk.js#xfbml=1&version=v3.1';  
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
+
 </script>
 
 </body>
